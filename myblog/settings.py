@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+from settings import sensitive_settings
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,10 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-vn((xko!edxz42oc8mu5um%=!6(6wtg)e+r)md1papup=d967-'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# SECURITY WARNING: don't run withsensitive_settings debug turned on in production!
+DEBUG = sensitive_settings.DEBUG_VALUE
 
 ALLOWED_HOSTS = []
+if not DEBUG:
+    ALLOWED_HOSTS = ['wbrasil.pythonanywhere.com', 'www.wbrasil.pythonanywhere.com']
 
 
 # Application definition
@@ -85,11 +89,11 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_myblog',
-        'USER': 'django',
-        'PASSWORD': 'django-root',
-        'HOST': 'localhost',   # Or the IP address where MySQL is hosted
-        'PORT': '3306',        # MySQL port (default is 3306)
+        'NAME': sensitive_settings.DATABASE_NAME,
+        'USER': sensitive_settings.DATABASE_USER,
+        'PASSWORD': sensitive_settings.DATABASE_PASSWORD,
+        'HOST': sensitive_settings.DATABASE_HOST,   # Or the IP address where MySQL is hosted
+        'PORT': sensitive_settings.DATABASE_PORT,        # MySQL port (default is 3306)
     }
 }
 
@@ -136,7 +140,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(STATIC_URL)
 
 
 # django-summernote
