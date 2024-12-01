@@ -1,0 +1,48 @@
+pre, code {
+    margin:0; padding:0;
+    list-style:none;
+    vertical-align:baseline;
+}
+.graficos{
+    padding-top: 50px;
+    text-align: center;
+}
+.graficos img{
+    max-width: 49%;
+}
+body {
+    grid-template-columns: 1fr min(60rem, 91%) 1fr;
+}
+header .icon{
+    vertical-align: sub;
+    padding-right: .25rem;
+    display: inline-block;
+    width: 1em;
+    height: 1.3em;
+    margin-right: 0.2rem;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+h2{
+    color: var(--accent);
+}
+h3, h4 {
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
+}
+textarea, select, input, button {
+    width: 100%;
+}
+hr{
+    width: 100%;
+}
+form{
+    margin-top: 1rem;
+}

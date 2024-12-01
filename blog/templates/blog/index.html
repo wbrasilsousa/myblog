@@ -8,11 +8,12 @@
         {% for post in posts %}
             <h3><a href="{% url 'blog_detail' post.slug %}">{{ post.title }}</a></h3>
             <small>
-                {{ post.created_on.date }} | Categories:
+                Categorias:
                 {% for category in post.categories.all %}
                     <a href="{% url 'blog_category' category.name %}">
                         {{ category.name }}
                     </a>
+                    {% if not forloop.last %} | {% endif %}
                 {% endfor %}
             </small>
             {{ post.body | safe | slice:":300" }}...

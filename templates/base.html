@@ -6,63 +6,16 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" href="https://static.djangoproject.com/img/favicon.6dbf28c0650e.ico">
     
-    <title>Wildney Brasil de Sousa</title>
-    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-    <style>
-        pre, code {
-            margin:0; padding:0;
-            list-style:none;
-            vertical-align:baseline;
-            font-size: 14px;
-        }
-        .graficos{
-            padding-top: 50px;
-            text-align: center;
-        }
-        .graficos img{
-            max-width: 49%;
-        }
-        body {
-            grid-template-columns: 1fr min(60rem, 91%) 1fr;
-        }
-        header .icon{
-            vertical-align: sub;
-            padding-right: .25rem;
-            display: inline-block;
-            width: 1em;
-            height: 1.3em;
-            margin-right: 0.2rem;
-            stroke-width: 0;
-            stroke: currentColor;
-            fill: currentColor;
-        }
-        a {
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        h2{
-            color: var(--accent);
-        }
-        h3, h4 {
-            margin-top: 3rem;
-            margin-bottom: 0.5rem;
-        }
-        textarea, select, input, button {
-            width: 100%;
-        }
-        hr{
-            width: 100%;
-        }
-        form{
-            margin-top: 1rem;
-        }
-    </style>
+    <title>{% block title %}Wildney Brasil de Sousa{% endblock %}</title>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <link rel="stylesheet" href="{{ BASE_DIR }}/static/css/custom.css">
+    
+    <!-- syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-solarizedlight.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
 </head>
 <body>
     <header>
